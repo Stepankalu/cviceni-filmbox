@@ -104,3 +104,32 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+
+// 1. Vyhledáme element s id "seznam-filmu"
+const seznamFilmu = document.querySelector("#seznam-filmu");
+
+// 2. Vymažeme veškerý stávající obsah elementu
+seznamFilmu.innerHTML = "";
+
+// 3. Projdeme pole filmů a pro každý film vložíme HTML kód karty
+filmy.forEach(function(film) {
+  seznamFilmu.innerHTML += `
+<div class="col">
+  <div class="card">
+    <img
+      src="https://via.placeholder.com/780x520?text=Plak%C3%A1t"
+      width="780"
+      height="520"
+      class="card-img-top"
+      alt="plakát"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Název filmu</h5>
+      <p class="card-text">Krátký popisek filmu.</p>
+      <a href="film.html#" class="btn btn-primary">Přehrát</a>
+    </div>
+  </div>
+</div>
+  `;
+});
